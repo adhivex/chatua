@@ -1,3 +1,4 @@
+import { SiteCredit } from "@/components/layout/SiteCredit";
 import { StoreHydrator } from "@/components/layout/StoreHydrator";
 import { Toast } from "@/components/layout/Toast";
 
@@ -9,6 +10,7 @@ export default function ShopLayout({ children }: { children: React.ReactNode }) 
         Skip to content
       </a>
       {children}
+      <SiteCredit />
       <StoreHydrator />
       <Toast />
     </div>

@@ -6,6 +6,9 @@ test("home shows the hero, trust row and featured products", async ({ page }) =>
   await expect(page.getByRole("heading", { level: 1, name: "The Goodness of Grains, In Every Spoon." })).toBeVisible();
   await expect(page.getByText("No Added")).toBeVisible();
   await expect(page.getByRole("heading", { name: "Classic Chatua" })).toBeVisible();
+  const credit = page.getByRole("contentinfo");
+  await expect(credit).toHaveText("Designed & Developed by OrangeKite");
+  await expect(credit.getByRole("link", { name: "OrangeKite" })).toHaveAttribute("href", "https://orangekite.si/");
   await page.getByRole("link", { name: /Shop Chatua/ }).click();
   await expect(page).toHaveURL(/\/shop$/);
 });
