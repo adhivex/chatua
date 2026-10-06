@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BackBar } from "@/components/layout/BackBar";
+import { SiteCredit } from "@/components/layout/SiteCredit";
 import { BookIcon, CartIcon, ChatIcon, DocIcon, InfoIcon, RightIcon, TempleIcon, UserIcon } from "@/components/ui/icons";
 import { INSTAGRAM_URL, supportEmail, whatsappLink } from "@/lib/site";
 
@@ -56,6 +57,7 @@ export default function AccountPage() {
           </>
         )}
       </p>
+      <SiteCredit />
     </main>
   );
 }

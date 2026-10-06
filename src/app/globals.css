@@ -239,7 +239,6 @@
 :root:has(.sticky-cta.has-note):not(:has(.bottom-nav)) {
   --cta-h: calc(107px + env(safe-area-inset-bottom));
 }
-/* The credit footer ends every storefront page, so it reserves the space under the fixed bars. */
-.site-credit {
-  padding-bottom: calc(var(--nav-h) + var(--cta-h) + 20px);
+.app-main {
+  padding-bottom: calc(var(--nav-h) + var(--cta-h));
 }
