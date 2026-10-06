@@ -72,7 +72,7 @@ Vercel runs `pnpm vercel-build` (not `build`): `prisma migrate deploy` → creat
 | `SUPABASE_URL`, `SUPABASE_SECRET_KEY` | Photo storage (bucket `product-images`, public) |
 | `PAYMENT_PROVIDER` + Razorpay keys | Leave `PAYMENT_PROVIDER` empty for Cash on Delivery only |
 
-Every deployment, including previews, migrates the database it points at; give preview deployments their own database. Rate limits are per serverless instance on Vercel; unpaid-order expiry runs on checkout and admin visits (Hobby plans only allow daily crons).
+Production uses the Supabase integration (`chatua-db`, Mumbai), connected to the Production environment only, so preview builds have no database and fail until one is connected for them. Functions run in `bom1` (vercel.json). Every deployment migrates the database it points at. Rate limits are per serverless instance on Vercel; unpaid-order expiry runs on checkout and admin visits (Hobby plans only allow daily crons).
 
 ## Going live
 
