@@ -2,7 +2,10 @@
 // Create-only: existing rows are never overwritten, so re-running it (every deploy does)
 // keeps prices, stock and copy edited in the admin.
 import { PrismaClient } from "@prisma/client";
+import { applyDatabaseUrls } from "../src/lib/database-url";
 import seed from "./seed-data.json";
+
+applyDatabaseUrls();
 
 const db = new PrismaClient();
 

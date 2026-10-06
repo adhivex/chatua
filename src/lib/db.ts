@@ -1,5 +1,8 @@
 import "server-only";
 import { PrismaClient } from "@prisma/client";
+import { applyDatabaseUrls } from "./database-url";
+
+applyDatabaseUrls();
 
 // One client per process; reuse across hot reloads in development.
 const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };

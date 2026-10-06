@@ -61,12 +61,12 @@ It syncs the source (no `.env*`), installs from the lockfile, runs `prisma migra
 
 ## Vercel
 
-Vercel runs `pnpm vercel-build` (not `build`): `prisma migrate deploy` → create-only seed → `next build`, so an empty database is set up on the first deploy. Set these in Vercel → Settings → Environment Variables:
+Vercel runs `pnpm vercel-build` (not `build`): `prisma migrate deploy` → create-only seed → `next build`, so an empty database is set up on the first deploy. Set these in Vercel → Settings → Environment Variables (the Supabase/Neon integrations' `POSTGRES_PRISMA_URL` / `POSTGRES_URL_NON_POOLING` also work). The build log prints which database host it uses (`[db] using …`, no password):
 
 | Variable | Value (Supabase) |
 |---|---|
 | `DATABASE_URL` | Pooled connection, port 6543, ending `?pgbouncer=true&connection_limit=1` |
-| `DIRECT_URL` | Direct connection, port 5432 (used by migrations) |
+| `DIRECT_URL` | Optional. Direct connection (port 5432) used by migrations; if unset it is derived (Supabase pooler session mode, `DATABASE_URL_UNPOOLED`, `POSTGRES_URL_NON_POOLING`, or `DATABASE_URL`) |
 | `NEXT_PUBLIC_SITE_URL` | Final domain, e.g. `https://chatua.in` (falls back to the Vercel production domain) |
 | `ADMIN_EMAIL`, `ADMIN_PASSWORD_HASH`, `SESSION_SECRET` | Admin sign-in (`pnpm admin:hash`) |
 | `SUPABASE_URL`, `SUPABASE_SECRET_KEY` | Photo storage (bucket `product-images`, public) |
