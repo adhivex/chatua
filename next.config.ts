@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const isDev = process.env.NODE_ENV !== "production";
-const https = (process.env.NEXT_PUBLIC_SITE_URL ?? "").startsWith("https://");
+const https = (process.env.NEXT_PUBLIC_SITE_URL ?? "").startsWith("https://") || process.env.VERCEL === "1";
 const plausible = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN ? " https://plausible.io" : "";
 
 // Razorpay Checkout loads its script from checkout.razorpay.com and opens api.razorpay.com in an iframe.

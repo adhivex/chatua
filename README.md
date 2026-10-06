@@ -59,6 +59,21 @@ Deploy a change (from this repo, as root):
 
 It syncs the source (no `.env*`), installs from the lockfile, runs `prisma migrate deploy` and the create-only seed, builds, and restarts `webapp@chatua`. Logs: `/opt/deploy/logs/build-chatua.log`, `journalctl -u webapp@chatua`.
 
+## Vercel
+
+Vercel runs `pnpm vercel-build` (not `build`): `prisma migrate deploy` → create-only seed → `next build`, so an empty database is set up on the first deploy. Set these in Vercel → Settings → Environment Variables:
+
+| Variable | Value (Supabase) |
+|---|---|
+| `DATABASE_URL` | Pooled connection, port 6543, ending `?pgbouncer=true&connection_limit=1` |
+| `DIRECT_URL` | Direct connection, port 5432 (used by migrations) |
+| `NEXT_PUBLIC_SITE_URL` | Final domain, e.g. `https://chatua.in` (falls back to the Vercel production domain) |
+| `ADMIN_EMAIL`, `ADMIN_PASSWORD_HASH`, `SESSION_SECRET` | Admin sign-in (`pnpm admin:hash`) |
+| `SUPABASE_URL`, `SUPABASE_SECRET_KEY` | Photo storage (bucket `product-images`, public) |
+| `PAYMENT_PROVIDER` + Razorpay keys | Leave `PAYMENT_PROVIDER` empty for Cash on Delivery only |
+
+Every deployment, including previews, migrates the database it points at; give preview deployments their own database. Rate limits are per serverless instance on Vercel; unpaid-order expiry runs on checkout and admin visits (Hobby plans only allow daily crons).
+
 ## Going live
 
 See `docs/LAUNCH-CHECKLIST.md`: owner details (GST, FSSAI, returns, WhatsApp, photos), Razorpay keys and webhook, domain, and a hardened or hosted database.

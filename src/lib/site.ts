@@ -7,7 +7,9 @@ export const SITE_DESCRIPTION =
   "Chatua is a traditional Odisha food made from roasted, finely ground grains and pulses. Natural, nourishing and delivered across India.";
 
 export function siteUrl(): string {
-  return (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/+$/, "");
+  // Explicit setting first; on Vercel fall back to the project's production domain.
+  const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  return (process.env.NEXT_PUBLIC_SITE_URL || (vercel ? `https://${vercel}` : "http://localhost:3000")).replace(/\/+$/, "");
 }
 
 /** Digits only with country code, or null when not configured. */

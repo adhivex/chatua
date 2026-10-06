@@ -24,3 +24,4 @@ Record every non-obvious decision here with date and reason.
 | 2026-10-06 | Rate limits and stale-order expiry are in-process | Single Node process on the VPS; move to Redis/Upstash if scaled out or on serverless |
 | 2026-10-06 | Policies page states only confirmed PRD rules; returns window, legal entity, GST and FSSAI are left for the owner (docs/LAUNCH-CHECKLIST.md) | Do not invent business or legal facts |
 | 2026-10-06 | Hosting for now: VPS preview (systemd `webapp@chatua`, Caddy, sslip.io, noindex). Vercel/GitHub deferred | Owner asked to test on the VPS first and not push or deploy externally |
+| 2026-10-07 | `vercel-build` script runs `prisma migrate deploy` and the create-only seed before `next build`; Node pinned to 24.x; site URL falls back to `VERCEL_PROJECT_PRODUCTION_URL` | First Vercel build failed: product pages pre-render from the database, which had no tables yet |
