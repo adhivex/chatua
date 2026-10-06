@@ -1,0 +1,23 @@
+/* Chatua design tokens — v3 (from starter/tokens.css). Extra tokens below the line are additions; see docs/DECISIONS.md. */
+:root{
+  --cream:#f7f0e4; --paper:#fffaf1; --card:#fffdf8; --sand:#efe4d1; --line:#e7dbc6;
+  --clay:#b4421a; --clay-dark:#8e3210; --clay-soft:#f6e1d2;
+  --gold:#c8a05a; --gold-light:#e6cc94;
+  --espresso:#22130a; --ink:#2a1a10; --muted:#76624f; --leaf:#2c7a47;
+  --shadow-sm:0 1px 2px rgba(60,35,15,.05),0 10px 26px -10px rgba(60,35,15,.2);
+  --shadow-lg:0 2px 4px rgba(60,35,15,.06),0 22px 44px -14px rgba(60,35,15,.32);
+  --radius-card:20px; --radius-btn:14px; --radius-input:12px; --radius-sheet:30px;
+  --hairline:rgba(200,160,90,.3);
+  --grad-primary:linear-gradient(180deg,#c64f22,#a43914);
+  --grad-gold:linear-gradient(180deg,#e6cc94,#c8a05a);
+  --shell-max:460px;
+  /* --- additions (prototype values that had no token) --- */
+  --ivory:#fbf3e4; --field:#fbf5ea; --gold-wash:#fff7e8; --gold-tint:#fbf0dc; --selected:#fffaf0;
+  --clay-wash:#fbeee3; --danger:#b3321f; --backdrop:#d8c6aa;
+  --hairline-strong:rgba(200,160,90,.35);
+  --grad-primary-pressed:linear-gradient(180deg,#a43914,#8e3210);
+  --grad-success:linear-gradient(180deg,#38975a,#256b3d);
+}
+body{background:var(--cream);color:var(--ink);font-family:var(--font-body),system-ui,sans-serif}
+h1,h2,h3{font-family:var(--font-head),Georgia,serif;font-optical-sizing:auto}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

@@ -1,0 +1,21 @@
+{
+  "products": [
+    {"slug":"classic-chatua","name":"Classic Chatua","category":"Classic","shortDesc":"Traditional grain blend for everyday nourishment.","longDesc":"Classic Chatua is made from carefully selected grains and pulses, traditionally roasted and finely ground. A wholesome, natural food from Odisha, suitable for everyday nourishment.","bestseller":true,"sortOrder":1,
+     "variants":[{"size":"500g","grams":500,"price":180,"sku":"CHT-CLS-500","stock":100},{"size":"1kg","grams":1000,"price":340,"sku":"CHT-CLS-1K","stock":100}]},
+    {"slug":"multi-grain-chatua","name":"Multi-Grain Chatua","category":"Multi-Grain","shortDesc":"A rich blend of multiple grains for complete nutrition.","longDesc":"A rich blend of several roasted grains and pulses, ground fine for complete, balanced nutrition. Mix it into water, milk or buttermilk and enjoy.","bestseller":false,"sortOrder":2,
+     "variants":[{"size":"500g","grams":500,"price":220,"sku":"CHT-MUL-500","stock":100},{"size":"1kg","grams":1000,"price":420,"sku":"CHT-MUL-1K","stock":100}]},
+    {"slug":"jaggery-chatua","name":"Jaggery Chatua","category":"Jaggery","shortDesc":"Natural sweetness with the goodness of jaggery.","longDesc":"Classic Chatua blended with natural jaggery for gentle sweetness. Ready to stir into a glass of milk or water, with no refined sugar added.","bestseller":false,"sortOrder":3,
+     "variants":[{"size":"500g","grams":500,"price":240,"sku":"CHT-JAG-500","stock":100},{"size":"1kg","grams":1000,"price":450,"sku":"CHT-JAG-1K","stock":100}]},
+    {"slug":"protein-chatua","name":"Protein Chatua","category":"Protein","shortDesc":"High-protein blend for an active lifestyle.","longDesc":"A pulse-forward blend with extra protein, made for busy mornings, workouts and anyone who wants a filling, natural drink or snack.","bestseller":false,"sortOrder":4,
+     "variants":[{"size":"500g","grams":500,"price":260,"sku":"CHT-PRO-500","stock":100},{"size":"1kg","grams":1000,"price":490,"sku":"CHT-PRO-1K","stock":100}]}
+  ],
+  "productCommon": {
+    "howToEnjoy": "Mix 2 to 3 tablespoons in a glass of cold water, milk or buttermilk. Stir well and drink fresh. You can also add it to breakfast bowls or make ladoos.",
+    "storage": "Keep in an airtight container in a cool, dry place and use a dry spoon each time."
+  },
+  "recipes": [
+    {"slug":"chatua-drink","title":"Chatua Drink","note":"A refreshing and nutritious drink.","category":"Drinks","sortOrder":1,"body":"Stir 2 tablespoons of Chatua into a glass of cold water or buttermilk. Add a pinch of salt or a little jaggery and drink fresh."},
+    {"slug":"chatua-breakfast-bowl","title":"Chatua Breakfast Bowl","note":"Healthy, filling and delicious.","category":"Breakfast","sortOrder":2,"body":"Mix 3 tablespoons of Chatua with warm milk, top with banana slices, nuts and a spoon of honey."},
+    {"slug":"chatua-ladoo","title":"Chatua Ladoo","note":"A traditional and tasty snack.","category":"Snacks","sortOrder":3,"body":"Combine Chatua with melted ghee and grated jaggery, then roll into small ladoos while the mix is warm."}
+  ]
+}
