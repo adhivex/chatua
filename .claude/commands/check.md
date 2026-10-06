@@ -1,0 +1,1 @@
+Run `pnpm lint && pnpm typecheck && pnpm build`. Fix any failures at the root cause. Then review the changed files against CLAUDE.md non-negotiables (server-side pricing, accessibility floor, token-only colours) and report anything that violates them.
